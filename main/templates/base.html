@@ -25,9 +25,10 @@
 						{% endif %}
 
 						{% if user.is_authenticated %}
+							
+							<img src="https://www.seekpng.com/png/detail/41-410093_circled-user-icon-user-profile-icon-png.png" height="30" width="30">
+							<a href="/myprofile/" class="nav-link">{{ user.username }}</a>
 							<a class="nav-link" href="/accounts/logout" >Logout</a>
-							<img src="https://www.seekpng.com/png/detail/41-410093_circled-user-icon-user-profile-icon-png.png" height="30" width="30" style="margin-left: 850px;">
-							<a href="/accounts/myprofile/" class="nav-link">{{ user.username }}</a>
 						{% endif %}
 					</div>
 				</div>
