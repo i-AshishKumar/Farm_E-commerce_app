@@ -1,1 +1,1 @@
-# SRP - Socially Relavant Project
+# SRP - Socially Relavant Project (E-Store)
