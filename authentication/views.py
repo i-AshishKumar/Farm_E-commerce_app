@@ -22,3 +22,6 @@ def logoutView(request):
     logout(request)
     return redirect('/')
 
+def profileView(request):
+    return render(request,'profile.html')
+

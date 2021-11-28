@@ -14,7 +14,7 @@
 				<a class="navbar-brand" href="#"><img src="https://www.svim.education/wp-content/uploads/2017/10/svdc_footers_logo.png" alt="" width="75" height="50"></a>
 
 				<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-					<div class="navbar-nav">
+					<div class="navbar">
 						<a class="nav-link" aria-current="page" href="/"
 							>Home</a
 						>
@@ -26,6 +26,8 @@
 
 						{% if user.is_authenticated %}
 							<a class="nav-link" href="/accounts/logout" >Logout</a>
+							<img src="https://www.seekpng.com/png/detail/41-410093_circled-user-icon-user-profile-icon-png.png" height="30" width="30" style="margin-left: 850px;">
+							<a href="/accounts/myprofile/" class="nav-link">{{ user.username }}</a>
 						{% endif %}
 					</div>
 				</div>
