@@ -11,23 +11,24 @@
 	<body>
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 			<div class="container">
-				<a class="navbar-brand" href="#"><img src="https://www.svim.education/wp-content/uploads/2017/10/svdc_footers_logo.png" alt="" width="75" height="50"></a>
+				<a class="navbar-brand" href="/"><img src="https://www.svim.education/wp-content/uploads/2017/10/svdc_footers_logo.png" alt="" width="75" height="50"></a>
 
-				<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+				<div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
 					<div class="navbar">
 						<a class="nav-link" aria-current="page" href="/"
 							>Home</a
 						>
 						<a class="nav-link" href="/products/" >Products</a>
 						{% if not user.is_authenticated %}
+							
 							<a class="nav-link" href="/accounts/register" >Register</a>
 							<a class="nav-link" href="/accounts/login" >Login</a>
 						{% endif %}
 
 						{% if user.is_authenticated %}
+							<a class="nav-link" href="/cart/" >Cart</a>
 							
-							<img src="https://www.seekpng.com/png/detail/41-410093_circled-user-icon-user-profile-icon-png.png" height="30" width="30">
-							<a href="/myprofile/" class="nav-link">{{ user.username }}</a>
+							<a href="/accounts/myprofile/" class="nav-link"><img src="https://www.seekpng.com/png/detail/41-410093_circled-user-icon-user-profile-icon-png.png" height="30" width="30">  {{ user.username }}</a>
 							<a class="nav-link" href="/accounts/logout" >Logout</a>
 						{% endif %}
 					</div>
