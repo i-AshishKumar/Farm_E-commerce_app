@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block title%}
+    {{item.name}}
+{% endblock %}
+
+{% block style %}
+    <style>
+       .card{
+           border: none;
+           left: 5rem;
+       }
+       .card-text{
+           padding: 0;
+       }
+       .table th{
+           padding-right: 1.5em;
+           color: gray;
+       }
+    </style>
+{% endblock %}
+
+{% block content%}
+    <div class="container pt-5">
+        <h1>{{item.name}}</h1>
+        <div class="container pt-3">
+            <img src="{{item.image.url}}" class="rounded float-start" width="400" height="400">
+        </div>
+
+        <div class="card">
+            <h4>Specifications: </h4>
+            <p>M.R.P <b><span style="font-size:larger;">&#8377 {{item.price}}</span></b> Inclusive of all taxes</p>
+            {% if item.in_stock %}
+            <span style="color:#00a651;"><b>In Stock</b></span>
+            {% else %}
+                <span style="color:rgb(207, 43, 43);"><b>Sorry! Out Of Stock</b></span>
+            {% endif %}
+            <br>
+            {% if user.is_authenticated %}  
+                <a href="#" class="btn btn-primary" style="align-self:start"><i class="bi bi-plus-circle" ></i> Add to cart</a><br>
+            {% else %}
+                <a href="/accounts/login/">Login To Add Items To Cart</a>
+            {% endif %}
+
+            <div class="card-body p-0">
+                <b>Description</b>
+                <div class="card-text">
+                    {{item.description}}
+                </div>
+
+                <b>Product Information</b>
+                <div class="table">
+                    <table>
+                        <tr>
+                            <th>Brand</th>
+                            <td>{{item.brand}}</td>
+                        </tr>
+                        <tr>
+                            <th>Manufacturer</th>
+                            <td>{{item.Manufacturer}}</td>
+                        </tr>
+                        <tr>
+                            <th>Country of Origin</th>
+                            <td>{{item.Country}}</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="card-text">
+                    <b>Disclaimer:</b>
+                    Despite our attempts to provide you with the most accurate information possible, the actual packaging, ingredients and colour of the product may sometimes vary. Please read the label, directions and warnings carefully before use.
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
