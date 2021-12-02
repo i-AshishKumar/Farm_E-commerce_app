@@ -1,8 +1,10 @@
+from django.contrib.auth.models import User
 from django.db import models
 
 # Create your models here.
-class Product(models.Model):
 
+
+class Product(models.Model):
     name = models.CharField(max_length=50)
     price = models.IntegerField(default=0)
     description = models.TextField()
@@ -17,3 +19,5 @@ class Product(models.Model):
 
     class Meta:
         ordering = ['-price']
+
+
