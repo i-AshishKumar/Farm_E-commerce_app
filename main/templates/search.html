@@ -1,35 +1,35 @@
 {% extends 'base.html' %} 
 
-{% block title%}Products{% endblock%}
+{% block title%}Search Resuls{% endblock%} 
 
 {% block style %}
     <style>
        .card{
            border: none;
        }
-
     </style>
 {% endblock %}
 
-{% block content%}
-
-
-
-		<div class="container">
+{% block content %}
+    {% if results %}
+        <h1>Results Found:</h1>
+        <div class="container">
 			<div class="row mt-5 mb-5">
-				{% for i in item %}
+				{% for i in results %}
 				<div class="card" style="width: 20rem;">
 					<img src="{{ i.image.url }}" class="card-img-top">
 					<div class="card-body">
 						<h5 class="card-title">{{ i.name }}</h5>
 						<h4 class="card-title">Rs.{{ i.price }}</h4><br>
 						<a href="/products/{{i.name}}/" class="btn btn-primary">View</a>
-						<a href="/cart/" class="btn btn-primary"><i class="bi bi-plus-circle" ></i> Add to cart</a>
+						<a href="#" class="btn btn-primary"><i class="bi bi-plus-circle" ></i> Add to cart</a>
 					</div>
 				</div>
 				{% endfor %}
 			</div>
 		</div>
+    {% endif %}
+
 
 
 {% endblock %}
