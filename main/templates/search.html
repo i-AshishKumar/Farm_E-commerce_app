@@ -12,9 +12,10 @@
 
 {% block content %}
     {% if results %}
-        <h1>Results Found:</h1>
+        <div class="container mt-5">
+			<h3 class="text-muted">Results Found: </h3>
         <div class="container">
-			<div class="row mt-5 mb-5">
+			<div class="row mt-4 mb-5">
 				{% for i in results %}
 				<div class="card" style="width: 20rem;">
 					<img src="{{ i.image.url }}" class="card-img-top">
@@ -27,6 +28,7 @@
 				</div>
 				{% endfor %}
 			</div>
+		</div>
 		</div>
     {% endif %}
 
