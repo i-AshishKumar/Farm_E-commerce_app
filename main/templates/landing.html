@@ -63,6 +63,10 @@
         font-family: FontAwesome
     }
 
+    .user-buttons{
+        display: flex;
+    }
+
     </style>
 {% endblock %}
 
@@ -83,7 +87,10 @@
             {% endif %}
             <br>
             {% if user.is_authenticated %}  
-                <a href="#" class="btn btn-primary" style="align-self:start"><i class="bi bi-plus-circle" ></i> Add to cart</a><br>
+                <div class="user-buttons">
+                    <a href="#" class="btn btn-primary" style="align-self:start"><i class="bi bi-plus-circle" ></i> Add to cart</a><br>
+                    <a href="#" class="btn btn-primary" style="margin-left: 1rem;" ><i class="bi bi-currency-dollar"></i> Buy Now</a><br>
+                </div>
             {% else %}
                 <a href="/accounts/login/">Login To Add Items To Cart</a>
             {% endif %}
@@ -129,7 +136,7 @@
                         <div class="stars">
                             <form action=""> 
                                 <input class="star star-5" id="star-5" type="radio" name="star" /> <label class="star star-5" for="star-5"></label> <input class="star star-4" id="star-4" type="radio" name="star" /> <label class="star star-4" for="star-4"></label> <input class="star star-3" id="star-3" type="radio" name="star" /> <label class="star star-3" for="star-3"></label> <input class="star star-2" id="star-2" type="radio" name="star" /> <label class="star star-2" for="star-2"></label> <input class="star star-1" id="star-1" type="radio" name="star" /> <label class="star star-1" for="star-1"></label> 
-                                <input type="textarea" placeholder="Enter your feedback...." >
+                                <input type="textarea" placeholder="Enter your feedback...."  >
                             </form>
                         </div>
                     </div>
