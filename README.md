@@ -1,7 +1,7 @@
 # SRP - Socially Relavant Project (E-Store)
 
 
-This Project is a basic prototype of the E-Store developed to market Agricultural products like Mango, Mangopulp, Jaggery, Sugarcane etc.
+This Project is a basic prototype of the E-Store developed to market Agricultural products .
 
 ## Features
 - Registration
