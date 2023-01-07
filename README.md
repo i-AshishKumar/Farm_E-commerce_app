@@ -1,4 +1,4 @@
-# SRP - Socially Relavant Project (E-Store)
+# E-Store
 
 
 This Project is a basic prototype of the E-Store developed to market Agricultural products .
